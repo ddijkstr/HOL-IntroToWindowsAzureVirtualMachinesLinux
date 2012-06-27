@@ -167,7 +167,7 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 	````Linux
 	zypper install yast2
 	zypper install yast2-ncurses
-	zypper install yast2-gt
+	zypper install yast2-qt
 	zypper install yast2-gtk
 	````
 
