@@ -80,7 +80,7 @@ In this exercise, you will learn how to provision Linux Virtual Machines in the 
 	 
 		_Creating a VM - VM Mode_
  
-	1. In the **VM Options** page, select the **Terms and Conditions and Privacy Policy** agreement checkbox and click the button to create a new VM.
+	1. In the **VM Options** page, click the button to create a new VM.
 
 		![Creating a VM - VM Options](images/creating-a-vm--vm-options.png?raw=true "Creating a VM - VM Options")
 
@@ -114,14 +114,15 @@ In this exercise, you will learn how to provision Linux Virtual Machines in the 
 Now that you have provisioned and configured a Linux Virtual Machine, you will connect by using an SSH client.
 
 >**Note:** You can download Putty, a free SSH client for Windows, here: [http://www.putty.org/](http://www.putty.org/)
- 
-1.	In the Windows Azure Portal, select the Linux VM from the list to enter the **Dashboard**. Locate the **DNS Name** field at the bottom of the page, which is the public address you will use to access and connect to the virtual machine.
 
-	![Dashboard - DNS name of the virtual machine](images/dashboard---dns-name-of-the-virtual-machine.png?raw=true)
-	 
-	_Dashboard  - DNS name of the virtual machine_
- 
-1. Open the Putty client (or any other SSH client) and create a new connection to the VM, using the public ssh port (E.g. 54022), and DNS name as the host name or IP address.
+
+1.	In the Windows Azure Portal, select the Linux VM from the list to enter the **Dashboard**. Take note of the **SSH Details** field at the "quick glance" section, which is the public address you will use to access and connect to the virtual machine using the SSH client.
+
+    ![SSH Endpoint](images/ssh-endpoint.png?raw=true "SSH Endpoint")
+
+    _SSH Endpoint_
+
+1. Open the Putty client (or any other SSH client) and create a new connection to the VM, using address and port from the previous step.
 
 	![Connecting to the Linux VM via Putty Client](images/connecting-to-the-linux-vm-via-putty-client.png?raw=true)
 	 
@@ -241,6 +242,12 @@ In this task, you will install and configure a Drupal portal on your Windows Azu
 	cd /srv/www/htdocs
 	mkdir drupal
 	cd drupal
+	````
+
+1.	Execute the following command to install **wget**.
+	
+	````Bash
+	zypper install wget
 	````
 
 1. Download and extract **Drupal**.
