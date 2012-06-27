@@ -169,6 +169,8 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 	zypper install yast2-ncurses
 	zypper install yast2-qt
 	zypper install yast2-gtk
+	zypper install yast2-packager
+	zypper install yast2-network
 	````
 
 1. To install the prerequisites for Drupal you will use **Yast2** to automatically install Apache and MySQL with their dependencies. In the terminal, execute **Yast2**. This will open the **Yast2** application.
