@@ -161,6 +161,12 @@ In this exercise, you will learn how to install and configure a Web Server in th
 
 In this task, you will install and configure an Apache HTTP Server and MySQL Database Management System.
 
+1. Install **Yast2**. In the terminal, execute the following command.
+
+	````Linux
+	zypper install yast2
+	````
+
 1. To install the prerequisites for Drupal you will use **Yast2** to automatically install Apache and MySQL with their dependencies. In the terminal, execute **Yast2**. This will open the **Yast2** application.
 
 	````Linux
