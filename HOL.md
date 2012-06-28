@@ -193,7 +193,7 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Selecting the Patterns Filter_
 
-1. Scroll down the options until you find **Web and LAMP Server**. Press **ALT+T**, then **ALT+A** and then **ALT+I** to select all LAMP package, and then **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+1. Scroll down the options until you find **Web and LAMP Server**. Press **ALT+T**, then **ALT+A** and then **ALT+I** to select all LAMP packages, and then **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
 
 	![Installing Web and LAMP Server](images/installing-web-and-lamp-server.png?raw=true)
 
