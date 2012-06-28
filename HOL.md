@@ -167,10 +167,12 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 	````Linux
 	zypper install yast2
 	zypper install yast2-ncurses
+	zypper install yast2-ncurses-pkg
 	zypper install yast2-qt
 	zypper install yast2-gtk
 	zypper install yast2-packager
 	zypper install yast2-network
+	zypper install yast2-http-server
 	````
 
 1. To install the prerequisites for Drupal you will use **Yast2** to automatically install Apache and MySQL with their dependencies. In the terminal, execute **Yast2**. This will open the **Yast2** application.
@@ -191,7 +193,7 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Selecting the Patterns Filter_
 
-1. Scroll down the options until you find **Web and LAMP Server**. Press **ENTER** to select it and press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+1. Scroll down the options until you find **Web and LAMP Server**. Press **ALT+T** and then press the **I** key. Then, press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
 
 	![Installing Web and LAMP Server](images/installing-web-and-lamp-server.png?raw=true)
 
