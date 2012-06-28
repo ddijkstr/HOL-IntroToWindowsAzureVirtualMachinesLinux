@@ -187,13 +187,13 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Software Management in YaST2_
 
-1. Press **ALT+F** to change the Filter type and select **Patterns**.
+1. Press **ALT+F** to change the Filter type, select **Patterns** and hit **Enter**.
 
 	![Selecting the Patterns Filter](images/selecting-the-patterns-filter.png?raw=true)
 
 	_Selecting the Patterns Filter_
 
-1. Scroll down the options until you find **Web and LAMP Server**. Press **ALT+T** and then press the **I** key. Then, press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+1. Scroll down the options until you find **Web and LAMP Server**. Press **ALT+T**, then **ALT+A** and then **ALT+I** to select all LAMP package, and then **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
 
 	![Installing Web and LAMP Server](images/installing-web-and-lamp-server.png?raw=true)
 
