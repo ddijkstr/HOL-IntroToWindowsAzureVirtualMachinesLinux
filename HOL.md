@@ -167,10 +167,12 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 	````Linux
 	zypper install yast2
 	zypper install yast2-ncurses
+	zypper install yast2-ncurses-pkg
 	zypper install yast2-qt
 	zypper install yast2-gtk
 	zypper install yast2-packager
 	zypper install yast2-network
+	zypper install yast2-http-server
 	````
 
 1. To install the prerequisites for Drupal you will use **Yast2** to automatically install Apache and MySQL with their dependencies. In the terminal, execute **Yast2**. This will open the **Yast2** application.
@@ -191,23 +193,29 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Selecting the Patterns Filter_
 
-1. Scroll down the options until you find **Web and LAMP Server**. Press **ENTER** to select it and press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+1. Scroll down the options until you find **Web and LAMP Server**. Press **ENTER** to select it, then press **ALT+T**, select **All listed packages...** and **Install All**.
 
 	![Installing Web and LAMP Server](images/installing-web-and-lamp-server.png?raw=true)
 
 	_Installing Web and LAMP Server_
 
-1. Once the installation is completed, the program will take you back to the main menu. Enter again the **Software Management**. Type **php5-gd** to search for this package and hit **ENTER** to select it. Press **ALT+A** to start the installation. Repeat the steps to install **php5-mbstring**.
+1. Press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+
+1. Once the installation is completed, the program will take you back to the main menu. Enter again the **Software Management**. Type **php5-json** to search for this package and hit **ENTER** to select it. Press **ALT+A** to start the installation.
 
 	![Installing PHP extensions](images/installing-php-extensions.png?raw=true)
 
 	_Installing PHP extensions_
 
-1. In the main menu, press the left arrow key and select **Network Services**. Press the right arrow key, select **HTTP Server** and press **ENTER**.
+1. Back to the main menu, press the left arrow key and select **Network Services**. Press the right arrow key, select **HTTP Server** and press **ENTER**.
 
 	![Configuring HTTP Server](images/configuring-http-server.png?raw=true)
 	
 	_Configuring HTTP Server_
+
+1. Follow the Wizard steps to complete the configuration using the default values.
+
+1. Select **Network Services**. Press the right arrow key and select **HTTP Server** again.
 
 1. Press **ALT+E** to enable the HTTP services and then press **ALT+F** to confirm the changes.
 
@@ -315,21 +323,11 @@ In this task, you will install and configure a Drupal portal on your Windows Azu
 	![Configuring a Drupal account](images/configuring-a-drupal-account.png?raw=true)
 	 
 	_Configuring a Drupal account_
- 
-1. Open the Virtual Machines dashboard in the Windows Azure Portal and click the **DNS Name** link to verify that the Drupal home page loads. 
+
+1. Click the **Visit your Web site** link to verify that the Drupal home page loads. 
 
 	![Drupal CMS home page](images/drupal-cms-home-page.png?raw=true)
 	 
 	_Drupal CMS home page_
- 
-1. In Putty, execute the following commands to revert the writing and execution permission assigned to install and configure Drupal. You are ready to use Drupal in a Linux Virtual Machine running on Windows Azure.
-	
-	<!--mark: 1,2-->
-	````Bash
-	sudo chmod go-w sites/default/settings.php
-	sudo chmod go-w sites/default
-	````	
-
-
 	
 ---
