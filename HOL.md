@@ -80,7 +80,7 @@ In this exercise, you will learn how to provision Linux Virtual Machines in the 
 	 
 		_Creating a VM - VM Mode_
  
-	1. In the **VM Options** page, select the **Terms and Conditions and Privacy Policy** agreement checkbox and click the button to create a new VM.
+	1. In the **VM Options** page, click the button to create a new VM.
 
 		![Creating a VM - VM Options](images/creating-a-vm--vm-options.png?raw=true "Creating a VM - VM Options")
 
@@ -114,14 +114,15 @@ In this exercise, you will learn how to provision Linux Virtual Machines in the 
 Now that you have provisioned and configured a Linux Virtual Machine, you will connect by using an SSH client.
 
 >**Note:** You can download Putty, a free SSH client for Windows, here: [http://www.putty.org/](http://www.putty.org/)
- 
-1.	In the Windows Azure Portal, select the Linux VM from the list to enter the **Dashboard**. Locate the **DNS Name** field at the bottom of the page, which is the public address you will use to access and connect to the virtual machine.
 
-	![Dashboard - DNS name of the virtual machine](images/dashboard---dns-name-of-the-virtual-machine.png?raw=true)
-	 
-	_Dashboard  - DNS name of the virtual machine_
- 
-1. Open the Putty client (or any other SSH client) and create a new connection to the VM, using the public ssh port (E.g. 54022), and DNS name as the host name or IP address.
+
+1.	In the Windows Azure Portal, select the Linux VM from the list to enter the **Dashboard**. Take note of the **SSH Details** field at the "quick glance" section, which is the public address you will use to access and connect to the virtual machine using the SSH client.
+
+    ![SSH Endpoint](images/ssh-endpoint.png?raw=true "SSH Endpoint")
+
+    _SSH Endpoint_
+
+1. Open the Putty client (or any other SSH client) and create a new connection to the VM, using address and port from the previous step.
 
 	![Connecting to the Linux VM via Putty Client](images/connecting-to-the-linux-vm-via-putty-client.png?raw=true)
 	 
@@ -154,12 +155,25 @@ In this exercise, you will learn how to install and configure a Web Server in th
   
 > - A Linux Virtual Machine created in Windows Azure Portal.
 > - A TCP Endpoint enabled in port 22.  
-> - An TCP Endpoint enabled in port 80.
+> - A TCP Endpoint enabled in port 80.
 
 <a name="Ex2Task1" />
 #### Task 1 - Installing and Configuring Apache and MySQL ####
 
 In this task, you will install and configure an Apache HTTP Server and MySQL Database Management System.
+
+1. Install **Yast2**. In the terminal, execute the following commands to install the required packages.
+
+	````Linux
+	zypper install yast2
+	zypper install yast2-ncurses
+	zypper install yast2-ncurses-pkg
+	zypper install yast2-qt
+	zypper install yast2-gtk
+	zypper install yast2-packager
+	zypper install yast2-network
+	zypper install yast2-http-server
+	````
 
 1. To install the prerequisites for Drupal you will use **Yast2** to automatically install Apache and MySQL with their dependencies. In the terminal, execute **Yast2**. This will open the **Yast2** application.
 
@@ -179,25 +193,33 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Selecting the Patterns Filter_
 
-1. Scroll down the options until you find **Web and LAMP Server**. Press **ENTER** to select it and press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+1. Scroll down the options until you find **Web and LAMP Server**. Press **ENTER** to select it, then press **ALT+T**, select **All listed packages...** and **Install All**.
 
 	![Installing Web and LAMP Server](images/installing-web-and-lamp-server.png?raw=true)
 
 	_Installing Web and LAMP Server_
 
-1. Once the installation is completed, the program will take you back to the main menu. Enter again the **Software Management**. Type **php5-gd** to search for this package and hit **ENTER** to select it. Press **ALT+A** to start the installation. Repeat the steps to install **php5-mbstring**.
+1. Press **ALT+A** to start the installation. Press **ENTER** when prompted for confirmation.
+
+1. Once the installation is completed, the program will take you back to the main menu. Enter again the **Software Management**. Type **php5-json** to search for this package and hit **ENTER** to select it. Press **ALT+A** to start the installation.
 
 	![Installing PHP extensions](images/installing-php-extensions.png?raw=true)
 
 	_Installing PHP extensions_
 
-1. In the main menu, press the left arrow key and select **Network Services**. Press the right arrow key, select **HTTP Server** and press **ENTER**.
+1. Back to the main menu, press the left arrow key and select **Network Services**. Press the right arrow key, select **HTTP Server** and press **ENTER**.
 
 	![Configuring HTTP Server](images/configuring-http-server.png?raw=true)
 	
 	_Configuring HTTP Server_
 
-1. Press **ALT+E** to enable the HTTP services and then press **ALT+F** to confirm the changes.
+1. Follow the Wizard steps pressing **F10** on each step to complete the configuration using the default values.
+
+	![HTTP Service Setup Wizard](images/http-service-setup-wizard.png?raw=true "HTTP Service Setup Wizard")
+
+	_HTTP Service Setup Wizard_
+
+1. Select **Network Services** and select **HTTP Server** again. Press **ALT+E** to enable the HTTP services and then press **ALT+F** to confirm the changes.
 
 	![Enabling HTTP service](images/enabling-http-service.png?raw=true)
 
@@ -209,7 +231,7 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Configuring System Services_
 
-1. Scroll down until you find **mysql** and press **ALT+E** to enable the service. Wait until the service is running. Press **F10** to save the settings.
+1. Scroll down until you find **mysql** and press **ALT+E** to enable the service. Wait until the service is running and press **Enter** on the confurmation message. Press **F10** to save the settings.
 
 	![Enabling MySQL service](images/enabling-mysql-service.png?raw=true)
 
@@ -235,6 +257,12 @@ In this task, you will install and configure a Drupal portal on your Windows Azu
 	cd /srv/www/htdocs
 	mkdir drupal
 	cd drupal
+	````
+
+1.	Execute the following command to install **wget**.
+	
+	````Bash
+	zypper install wget
 	````
 
 1. Download and extract **Drupal**.
@@ -297,21 +325,11 @@ In this task, you will install and configure a Drupal portal on your Windows Azu
 	![Configuring a Drupal account](images/configuring-a-drupal-account.png?raw=true)
 	 
 	_Configuring a Drupal account_
- 
-1. Open the Virtual Machines dashboard in the Windows Azure Portal and click the **DNS Name** link to verify that the Drupal home page loads. 
+
+1. Click the **Visit your Web site** link to verify that the Drupal home page loads. 
 
 	![Drupal CMS home page](images/drupal-cms-home-page.png?raw=true)
 	 
 	_Drupal CMS home page_
- 
-1. In Putty, execute the following commands to revert the writing and execution permission assigned to install and configure Drupal. You are ready to use Drupal in a Linux Virtual Machine running on Windows Azure.
-	
-	<!--mark: 1,2-->
-	````Bash
-	sudo chmod go-w sites/default/settings.php
-	sudo chmod go-w sites/default
-	````	
-
-
 	
 ---
