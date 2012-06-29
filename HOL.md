@@ -155,7 +155,7 @@ In this exercise, you will learn how to install and configure a Web Server in th
   
 > - A Linux Virtual Machine created in Windows Azure Portal.
 > - A TCP Endpoint enabled in port 22.  
-> - An TCP Endpoint enabled in port 80.
+> - A TCP Endpoint enabled in port 80.
 
 <a name="Ex2Task1" />
 #### Task 1 - Installing and Configuring Apache and MySQL ####
