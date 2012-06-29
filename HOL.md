@@ -213,11 +213,13 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 	
 	_Configuring HTTP Server_
 
-1. Follow the Wizard steps to complete the configuration using the default values.
+1. Follow the Wizard steps pressing **F10** on each step to complete the configuration using the default values.
 
-1. Select **Network Services**. Press the right arrow key and select **HTTP Server** again.
+	![HTTP Service Setup Wizard](images/http-service-setup-wizard.png?raw=true "HTTP Service Setup Wizard")
 
-1. Press **ALT+E** to enable the HTTP services and then press **ALT+F** to confirm the changes.
+	_HTTP Service Setup Wizard_
+
+1. Select **Network Services** and select **HTTP Server** again. Press **ALT+E** to enable the HTTP services and then press **ALT+F** to confirm the changes.
 
 	![Enabling HTTP service](images/enabling-http-service.png?raw=true)
 
@@ -229,7 +231,7 @@ In this task, you will install and configure an Apache HTTP Server and MySQL Dat
 
 	_Configuring System Services_
 
-1. Scroll down until you find **mysql** and press **ALT+E** to enable the service. Wait until the service is running. Press **F10** to save the settings.
+1. Scroll down until you find **mysql** and press **ALT+E** to enable the service. Wait until the service is running and press **Enter** on the confurmation message. Press **F10** to save the settings.
 
 	![Enabling MySQL service](images/enabling-mysql-service.png?raw=true)
 
